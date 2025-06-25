@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoTerm - Beautiful CLI Todo Manager</title>
+    <meta name="description" content="The most beautiful CLI todo list manager with project management for your terminal. Stand out with stunning ASCII art, gradient colors, and smooth animations.">
+    <meta name="keywords" content="todo, cli, terminal, project management, productivity, beautiful, ascii art">
+    <meta name="author" content="Fadli Wilihandarwo">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TodoTerm - Beautiful CLI Todo Manager">
+    <meta property="og:description" content="Transform your terminal into a beautiful, engaging workspace that makes productivity a joy!">
+    <meta property="og:url" content="https://wilihandarwo.github.io/todoterm-website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="logo">📝 TodoTerm</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#installation" class="nav-link">Install</a>
+                <a href="#docs" class="nav-link">Docs</a>
+                <a href="https://github.com/wilihandarwo/todoterm" class="nav-link" target="_blank">GitHub</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        The Most Beautiful<br>
+                        <span class="gradient-text">CLI Todo Manager</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Transform your terminal into a beautiful, engaging workspace with stunning ASCII art, 
+                        project management, and smooth animations that make productivity a joy!
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="copyInstallCommand()">
+                            <span class="btn-icon">📦</span>
+                            npm install -g todoterm
+                        </button>
+                        <a href="#demo" class="btn btn-secondary">
+                            <span class="btn-icon">🎬</span>
+                            See Demo
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">2.0</span>
+                            <span class="stat-label">Latest Version</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">MIT</span>
+                            <span class="stat-label">License</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Dependencies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">Terminal</div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command">todoterm</span>
+                            </div>
+                            <div class="ascii-art">
+████████╗ ██████╗ ██████╗  ██████╗ ████████╗███████╗██████╗ ███╗   ███╗
+╚══██╔══╝██╔═══██╗██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗████╗ ████║
+   ██║   ██║   ██║██║  ██║██║   ██║   ██║   █████╗  ██████╔╝██╔████╔██║
+   ██║   ██║   ██║██║  ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║
+   ██║   ╚██████╔╝██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║██║ ╚═╝ ██║
+   ╚═╝    ╚═════╝ ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
+                            </div>
+                            <div class="terminal-subtitle">✨ Beautiful Terminal Todo Manager ✨</div>
+                            <div class="terminal-line project-info">
+                                <span class="project-icon">📂</span>
+                                <span>Current Project: Website Development</span>
+                            </div>
+                            <div class="terminal-table">
+                                <div class="table-row header">
+                                    <span>Status</span>
+                                    <span>Task</span>
+                                    <span>Created</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="status done">1. ✓ Done</span>
+                                    <span>Design homepage</span>
+                                    <span class="date">Jun 25</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="status pending">2. ○ Pending</span>
+                                    <span>Add animations</span>
+                                    <span class="date">Jun 25</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose TodoTerm?</h2>
+                <p class="section-subtitle">Unlike boring CLI todo apps, TodoTerm transforms your terminal into a beautiful, engaging workspace</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📂</div>
+                    <h3 class="feature-title">Project Management</h3>
+                    <p class="feature-description">Organize todos into separate projects with human-friendly IDs like 'website-development'</p>
+                    <div class="feature-demo">
+                        <code>todoterm pa "Website"</code>
+                        <code>todoterm ps website</code>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Beautiful Design</h3>
+                    <p class="feature-description">Stunning ASCII art, gradient colors, and clean tables that make productivity enjoyable</p>
+                    <div class="feature-demo">
+                        <div class="mini-gradient">Beautiful Gradients</div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">Contextual Help</h3>
+                    <p class="feature-description">Smart command hints based on what you're viewing - never wonder what to do next</p>
+                    <div class="feature-demo">
+                        <small>💡 Quick commands:</small>
+                        <small>todoterm add "task"</small>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Interactive Mode</h3>
+                    <p class="feature-description">Beautiful menu-driven interface with perfect ASCII alignment and smooth navigation</p>
+                    <div class="feature-demo">
+                        <code>[>] View todos</code>
+                        <code>[+] Add new todo</code>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Smooth Animations</h3>
+                    <p class="feature-description">Loading spinners and celebration effects that motivate you to get things done</p>
+                    <div class="feature-demo">
+                        <div class="spinner">⠋</div>
+                        <small>Adding your todo...</small>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Zero dependencies, optimized performance, works on Mac, Linux, Windows</p>
+                    <div class="feature-demo">
+                        <div class="speed-indicator">⚡ 0ms</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Quick Installation</h2>
+                <p class="section-subtitle">Get started in seconds with your favorite package manager</p>
+            </div>
+            
+            <div class="install-options">
+                <div class="install-card">
+                    <div class="install-header">
+                        <div class="install-icon">📦</div>
+                        <h3>NPM (Recommended)</h3>
+                    </div>
+                    <div class="install-command">
+                        <code id="npm-command">npm install -g todoterm</code>
+                        <button class="copy-btn" onclick="copyCommand('npm-command')">📋</button>
+                    </div>
+                    <p class="install-note">Works on all platforms. Requires Node.js.</p>
+                </div>
+
+                <div class="install-card">
+                    <div class="install-header">
+                        <div class="install-icon">🍺</div>
+                        <h3>Homebrew (Mac)</h3>
+                    </div>
+                    <div class="install-command">
+                        <code id="brew-command">brew tap wilihandarwo/todoterm && brew install todoterm</code>
+                        <button class="copy-btn" onclick="copyCommand('brew-command')">📋</button>
+                    </div>
+                    <p class="install-note">Perfect for macOS users.</p>
+                </div>
+            </div>
+
+            <div class="quick-start">
+                <h3>Quick Start</h3>
+                <div class="quick-start-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <code>todoterm</code>
+                            <small>Launch interactive mode</small>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <code>todoterm add "My first task"</code>
+                            <small>Add your first todo</small>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <code>todoterm pa "My Project"</code>
+                            <small>Create a project</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="docs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Documentation</h2>
+                <p class="section-subtitle">Everything you need to master TodoTerm</p>
+            </div>
+            
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <h3>📋 Basic Commands</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>todoterm list</code>
+                            <span>View todos</span>
+                        </div>
+                        <div class="command-item">
+                            <code>todoterm add "task"</code>
+                            <span>Add new todo</span>
+                        </div>
+                        <div class="command-item">
+                            <code>todoterm done 1</code>
+                            <span>Mark as done</span>
+                        </div>
+                        <div class="command-item">
+                            <code>todoterm rm 1</code>
+                            <span>Remove todo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <h3>📂 Project Management</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>todoterm projects</code>
+                            <span>List projects</span>
+                        </div>
+                        <div class="command-item">
+                            <code>todoterm pa "name"</code>
+                            <span>Add project</span>
+                        </div>
+                        <div class="command-item">
+                            <code>todoterm ps project-id</code>
+                            <span>Switch project</span>
+                        </div>
+                        <div class="command-item">
+                            <code>todoterm pr project-id</code>
+                            <span>Remove project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doc-card">
+                    <h3>🎮 Interactive Mode</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>todoterm</code>
+                            <span>Launch interactive menu</span>
+                        </div>
+                        <div class="command-item">
+                            <span class="symbol">[>]</span>
+                            <span>View todos</span>
+                        </div>
+                        <div class="command-item">
+                            <span class="symbol">[+]</span>
+                            <span>Add new todo</span>
+                        </div>
+                        <div class="command-item">
+                            <span class="symbol">[*]</span>
+                            <span>View projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="docs-links">
+                <a href="https://github.com/wilihandarwo/todoterm#readme" class="docs-link" target="_blank">
+                    📖 Full Documentation
+                </a>
+                <a href="https://github.com/wilihandarwo/todoterm/issues" class="docs-link" target="_blank">
+                    🐛 Report Issues
+                </a>
+                <a href="https://npmjs.com/package/todoterm" class="docs-link" target="_blank">
+                    📦 NPM Package
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">📝 TodoTerm</span>
+                    <p>Made with ♥ by <a href="https://github.com/wilihandarwo" target="_blank">Fadli Wilihandarwo</a></p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#installation">Installation</a>
+                        <a href="#docs">Documentation</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="https://github.com/wilihandarwo/todoterm" target="_blank">GitHub</a>
+                        <a href="https://npmjs.com/package/todoterm" target="_blank">NPM</a>
+                        <a href="https://github.com/wilihandarwo/homebrew-todoterm" target="_blank">Homebrew Tap</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <a href="https://github.com/wilihandarwo/todoterm/issues" target="_blank">Issues</a>
+                        <a href="https://github.com/wilihandarwo/todoterm/discussions" target="_blank">Discussions</a>
+                        <a href="https://github.com/wilihandarwo/todoterm/blob/main/CONTRIBUTING.md" target="_blank">Contributing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TodoTerm. MIT License. Open source and free forever.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy notification -->
+    <div id="copy-notification" class="copy-notification">
+        ✅ Copied to clipboard!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

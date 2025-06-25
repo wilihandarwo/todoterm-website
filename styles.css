@@ -1,0 +1,740 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Terminal Window */
+.terminal-window {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.terminal-header {
+    background: #2d2d2d;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.btn-close { background: #ff5f57; }
+.btn-minimize { background: #ffbd2e; }
+.btn-maximize { background: #28ca42; }
+
+.terminal-title {
+    color: #ccc;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.terminal-content {
+    padding: 1.5rem;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.terminal-line {
+    margin-bottom: 0.5rem;
+}
+
+.terminal-prompt {
+    color: #4ecdc4;
+    margin-right: 0.5rem;
+}
+
+.terminal-command {
+    color: #fff;
+}
+
+.ascii-art {
+    color: #667eea;
+    font-size: 0.5rem;
+    line-height: 1;
+    margin: 1rem 0;
+    background: linear-gradient(45deg, #667eea, #764ba2, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.terminal-subtitle {
+    color: #4ecdc4;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+}
+
+.project-info {
+    color: #ff6b6b;
+    margin: 1rem 0;
+}
+
+.project-icon {
+    margin-right: 0.5rem;
+}
+
+.terminal-table {
+    margin-top: 1rem;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    gap: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #333;
+}
+
+.table-row.header {
+    color: #4ecdc4;
+    font-weight: 600;
+    border-bottom: 1px solid #4ecdc4;
+}
+
+.status.done {
+    color: #28ca42;
+}
+
+.status.pending {
+    color: #ffbd2e;
+}
+
+.date {
+    color: #888;
+}
+
+/* Sections */
+.features, .installation, .docs {
+    padding: 80px 0;
+    background: white;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.feature-demo {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 0.875rem;
+}
+
+.feature-demo code {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #667eea;
+}
+
+.mini-gradient {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.speed-indicator {
+    background: linear-gradient(45deg, #28ca42, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+/* Installation Section */
+.installation {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.install-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.install-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.install-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.install-icon {
+    font-size: 2rem;
+}
+
+.install-command {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.install-command code {
+    flex: 1;
+    font-family: 'SF Mono', Monaco, monospace;
+    color: #333;
+    font-size: 0.875rem;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.copy-btn:hover {
+    opacity: 1;
+}
+
+.install-note {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* Quick Start */
+.quick-start {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.quick-start h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.25rem;
+}
+
+.quick-start-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-content code {
+    display: block;
+    font-family: 'SF Mono', Monaco, monospace;
+    color: #667eea;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.step-content small {
+    color: #666;
+    font-size: 0.75rem;
+}
+
+/* Documentation */
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.doc-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.doc-card h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.25rem;
+}
+
+.command-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.command-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.command-item code {
+    font-family: 'SF Mono', Monaco, monospace;
+    color: #667eea;
+    font-size: 0.875rem;
+}
+
+.command-item .symbol {
+    font-family: 'SF Mono', Monaco, monospace;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.command-item span:last-child {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.docs-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.docs-link {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.docs-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand .logo {
+    color: white;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.footer-brand p {
+    color: #ccc;
+}
+
+.footer-brand a {
+    color: #4ecdc4;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #4ecdc4;
+}
+
+.footer-section a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    text-align: center;
+    color: #888;
+}
+
+/* Copy Notification */
+.copy-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #28ca42;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.copy-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .features-grid,
+    .install-options,
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .docs-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .terminal-content {
+        font-size: 0.6rem;
+    }
+    
+    .ascii-art {
+        font-size: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .terminal-content {
+        padding: 1rem;
+        font-size: 0.55rem;
+    }
+    
+    .ascii-art {
+        font-size: 0.35rem;
+    }
+}
